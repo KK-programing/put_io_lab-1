@@ -97,6 +97,31 @@ Osoba chcąca zakupić produkt na aukcji.
 
 ---
 
+<a id="uc3"></a>
+### UC2: Zakończenie aukcji
+
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. System sprawdza, czy minął czas aukcji
+2. System sprawdza, który kupujący zaproponował najwyższą aktualną ofertę
+3. System wysyła informację o wygraniu aukcji do kupującego
+4. [Kupujący](#ac2) potwierdza odebranie informacji o tym, że wygrał aukcję
+5. System wysyła informację o zakończeniu aukcji do sprzedającego
+6. [Sprzedający](#ac1) potwierdza odebranie informacji o tym, że aukcja się zakończyła
+7. System usuwa aukcję
+
+**Scenariusze alternatywne:** 
+
+1.A. Czas aukcji nie minął 
+* 1.A.1. Przejdź krok 1
+4.A. Kupujący nie potwierdza odbioru informacji
+* 4.A.1. Przejdż krok 3
+6.A. Sprzedający nie potwierdza odbioru informacji
+* 6.A.1. Przejdź krok 5
+
+
+---
 ## Obiekty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
 
 ### BO1: Aukcja
@@ -123,9 +148,10 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 ## Macierz CRUDL
 
 
-| Przypadek użycia                                  | Aukcja | Produkt | ... |
-| ------------------------------------------------- | ------ | ------- | --- |
-| UC1: Wystawienia produktu na aukcję               |    C   |    C    | ... |
-| ???                                               |  ...   |  ...    | ... |
+| Przypadek użycia                                  | Aukcja | Produkt | 
+| ------------------------------------------------- | ------ | ------- |
+| UC1: Wystawienia produktu na aukcję               |   C    |    C    | 
+| UC2: Licytacja na aukcji                          |   U    |         | 
+| UC3: Zakończenie aukcji                           |   D    |    D    |
 
 
