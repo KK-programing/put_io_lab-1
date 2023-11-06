@@ -2,7 +2,7 @@
 
 ## Wprowadzenie
 
-Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży produktów w oparciu o mechanizm aukcyjny. 
+Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży produktów w oparciu o mechanizm aukcyjny.
 
 ## Procesy biznesowe
 
@@ -50,10 +50,10 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* ...
 
 [Kupujący](#ac2)
-* ...
+* [BR1](#br1): Oferta kwoty za produkt wyższą od aktualnie najwyższej oferty
+* [BR2](#br2): Wygrana aukcji
 
 ---
 <a id="uc1"></a>
