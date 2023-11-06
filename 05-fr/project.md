@@ -53,7 +53,7 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Kupujący](#ac2)
 * [BR1](#br1): Oferta kwoty za produkt wyższą od aktualnie najwyższej oferty
-* [BR2](#br2): Wygrana aukcji
+* Przekazanie należności za produkt sprzedającemu
 
 ---
 <a id="uc1"></a>
@@ -77,17 +77,25 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Licytacja na aukcji
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. [Kupujący](#ac2) zgłasza do systemu chęć wystawienia wyższej oferty za produkt niż aktualna najwyższa
+2. System prosi o podanie kwoty
+3. System sprawdza czy oferta jest wyższa niż aktualna najwyższa
+4. System ustala zaproponowaną ofertę jako aktualnie najwyższą
+5. System sprawdza, który kupujący zaproponował najwyższą aktualną ofertę
+6. [Kupujący](#ac2) wygrywa aukcję
 
 **Scenariusze alternatywne:** 
 
-1.A. ...
-* 4.A.1. ...
+4.A. Podana kwota jest mniejsza niż aktualna najwyższa lub jest podana niepoprawnie
+* 4.A.1. System informuje o niepoprawności podanej kwoty
+* 4.A.2. Przejdź do kroku 2
+5.A. Kupujący nie jest tym który zaproponował najwyższą aktualną ofertę
+* 5.A.1 [Kupujący](#ac2) nie wygrywa aukcji, koniec
 
 ---
 
