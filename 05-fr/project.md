@@ -85,21 +85,15 @@ Osoba chcąca zakupić produkt na aukcji.
 1. System czeka na oferty kupującego
 2. [Kupujący](#ac2) zgłasza do systemu chęć wystawienia wyższej oferty za produkt niż aktualna najwyższa
 3. System prosi o podanie kwoty
-4. System sprawdza czy oferta jest wyższa niż aktualna najwyższa
-5. System ustala zaproponowaną ofertę jako aktualnie najwyższą i informuje o tym kupującego
-6. System sprawdza, czy upłynął czas aukcji
-7. System sprawdza, który kupujący zaproponował najwyższą aktualną ofertę
-8. [Kupujący](#ac2) wygrywa aukcję
+4. [Kupujący](#ac2) podaje kwotę swojej oferty
+5. System sprawdza czy oferta jest wyższa niż aktualna najwyższa
+6. System ustala zaproponowaną ofertę jako aktualnie najwyższą i informuje o tym kupującego
 
 **Scenariusze alternatywne:** 
 
-4.A. Podana kwota jest mniejsza niż aktualna najwyższa lub jest podana niepoprawnie
-* 4.A.1. System informuje o niepoprawności podanej kwoty
-* 4.A.2. Przejdź do kroku 3
-6.A. Czas aukcji jeszcze nie minął
-* 6.A.1. Przejdź do kroku 1
-7.A. Kupujący nie jest tym który zaproponował najwyższą aktualną ofertę
-* 7.A.1 [Kupujący](#ac2) nie wygrywa aukcji, koniec działania
+5.A. Podana kwota jest mniejsza niż aktualna najwyższa lub jest podana niepoprawnie
+* 5.A.1. System informuje o niepoprawności podanej kwoty
+* 5.A.2. Przejdź do kroku 3
 
 ---
 
