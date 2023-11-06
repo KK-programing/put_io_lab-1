@@ -16,9 +16,9 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 
 **Scenariusz główny:**
 1. [Sprzedający](#ac1) wystawia produkt na aukcję. ([UC1](#uc1))
-2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1))
-3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2))
-4. [Kupujący](#ac2) przekazuje należność Sprzedającemu.
+2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1)) ([UC2](#uc2))
+3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2)) ([UC3](#uc3))
+4. [Kupujący](#ac2) przekazuje należność Sprzedającemu. ([UC4](#uc4))
 5. [Sprzedający](#ac1) przekazuje produkt Kupującemu.
 
 **Scenariusze alternatywne:** 
@@ -50,10 +50,12 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* ...
+* [UC4](#uc4): Przekazanie należności za produkt
 
 [Kupujący](#ac2)
-* ...
+* [UC2](#uc2): Licytacja
+* [UC3](#uc3): Wybranie zwycięzcy aukcji
+* [UC4](#uc4): Przekazanie należności za produkt
 
 ---
 <a id="uc1"></a>
@@ -77,17 +79,55 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Licytacja
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. [Kupujący](#ac2) zgłasza do systemu chęć złożenia oferty na aukcji.
+2. System prosi o podanie oferty.
+3. [Kupujący](#ac2) zgłasza do systemu swoją ofertę.
+4. System weryfikuje poprawność oferty.
+5. System informuje o pomyślnym przyjąciu oferty.
 
 **Scenariusze alternatywne:** 
 
-1.A. ...
-* 4.A.1. ...
+4.A. Podano ofertę niższą od bieżącej
+* 4.A.1. System informuje o za niskiej ofercie.
+* 4.A.2. Przejdź do kroku 2.
+
+---
+
+<a id="uc3"></a>
+### UC3: Wybranie zwycięzcy aukcji
+
+**Aktorzy:** [Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. System ustla [Kupującego](#ac2), który wygrał aukcje.
+2. System informuje [Kupującego](#ac2) o rezultacie aukcji.
+
+---
+
+<a id="uc4"></a>
+### UC4: Przekazanie należności za produkt
+
+**Aktorzy:** [Sprzedający](#ac1),[Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. [Kupujący](#ac2) zgłasza do systemu chęć uregulowania należności
+2. System prosi [Kupującego](#ac2) o wybranie metody płatności.
+3. [Kupujący](#ac2) wybiera metodę płatności.
+4. System prosi [Kupującego](#ac2) o podanie danych dotyczących płatności.
+5. [Kupujący](#ac2) podaje dane dotyczące płatności.
+6. System waliduje dane dotyczące płatności.
+7. System informuje [Kupującego](#ac2) i [Sprzedającego](#ac1) o poprawności przekazania płatności.
+
+**Scenariusze alternatywne:** 
+
+6.A. Podano niewłaściwe dane.
+* 6.A.1. System informuje o błędnie podanych danych.
+* 6.A.2. Przejdź do kroku 4.
 
 ---
 
@@ -120,6 +160,6 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 | Przypadek użycia                                  | Aukcja | Produkt | ... |
 | ------------------------------------------------- | ------ | ------- | --- |
 | UC1: Wystawienia produktu na aukcję               |    C   |    C    | ... |
-| ???                                               |  ...   |  ...    | ... |
-
-
+| UC2: Licytacja                                    |   R,U  |    -    | ... |
+| UC3: Wybranie zwycięzcy aukcji                    |    R   |    -    | ... |
+| UC4: Przekazanie należności za produkt            |    D   |    D    | ... |
